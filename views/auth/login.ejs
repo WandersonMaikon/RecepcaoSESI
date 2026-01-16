@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login | Recepção SESI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- Theme Config Js -->
+    <script src="assets/js/config.js"></script>
+
+    <!-- Vendor css -->
+    <link href="assets/css/vendors.min.css" rel="stylesheet" type="text/css">
+
+    <!-- App css -->
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+    <div class="auth-box d-flex align-items-center">
+        <div class="container-xxl">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-xl-10">
+                    <div class="card rounded-4">
+                        <div class="row justify-content-between g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body">
+                                    <div class="auth-brand text-center mb-4">
+                                        <a href="/login" class="logo-dark">
+                                            <img src="/assets/images/logo-black.png" alt="logo" height="32">
+                                        </a>
+                                        <a href="/login" class="logo-light">
+                                            <img src="/assets/images/logo.png" alt="logo" height="32">
+                                        </a>
+
+                                        <h4 class="fw-bold mt-4">Recepção SESI</h4>
+                                        <p class="text-muted w-lg-75 mx-auto">
+                                            Entre com seu usuário e senha para continuar.
+                                        </p>
+                                    </div>
+
+                                    <% if (typeof erro !=="undefined" && erro) { %>
+                                        <div class="alert alert-danger" role="alert">
+                                            <%= erro %>
+                                        </div>
+                                        <% } %>
+
+                                            <form method="POST" action="/login">
+                                                <div class="mb-3">
+                                                    <label for="usuario" class="form-label">
+                                                        Usuário <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light">
+                                                            <i class="ti ti-user text-muted fs-xl"></i>
+                                                        </span>
+                                                        <input type="text" class="form-control" id="usuario"
+                                                            name="usuario" placeholder="Digite seu usuário" required
+                                                            autocomplete="username">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="senha" class="form-label">
+                                                        Senha <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light">
+                                                            <i class="ti ti-lock-password text-muted fs-xl"></i>
+                                                        </span>
+                                                        <input type="password" class="form-control" id="senha"
+                                                            name="senha" placeholder="••••••••" required
+                                                            autocomplete="current-password">
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input form-check-input-light fs-14"
+                                                            type="checkbox" id="rememberMe" name="rememberMe">
+                                                        <label class="form-check-label" for="rememberMe">Manter
+                                                            conectado</label>
+                                                    </div>
+
+                                                    <!-- Se você ainda não tem reset de senha, pode esconder esse link -->
+                                                    <a href="#"
+                                                        class="text-decoration-underline link-offset-3 text-muted"
+                                                        onclick="return false;">
+                                                        Esqueci a senha
+                                                    </a>
+                                                </div>
+
+                                                <div class="d-grid">
+                                                    <button type="submit" class="btn btn-primary fw-semibold py-2">
+                                                        Entrar
+                                                    </button>
+                                                </div>
+                                            </form>
+
+                                            <p class="text-center text-muted mt-4 mb-0">
+                                                ©
+                                                <script>document.write(new Date().getFullYear())</script> Recepção SESI
+                                            </p>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6 d-none d-lg-block">
+                                <div
+                                    class="h-100 position-relative card-side-img rounded-end-4 rounded-end rounded-0 overflow-hidden">
+                                    <div
+                                        class="p-4 card-img-overlay rounded-4 rounded-start-0 auth-overlay d-flex align-items-end justify-content-center">
+                                        <!-- opcional: texto/ilustração do lado direito -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendors.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+</body>
+
+</html>

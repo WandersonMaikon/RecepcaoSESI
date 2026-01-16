@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const authRoutes = require("./routes/auth.routes");
-const visitantesRoutes = require("./routes/visitantes.routes");
+const dashboardRoutes = require("./routes/dashboard.routes");
 
 const app = express();
 
@@ -17,7 +17,7 @@ app.get("/", (req, res) => res.redirect("/login"));
 
 // Rotas
 app.use("/", authRoutes);
-app.use("/visitantes", visitantesRoutes);
+app.use("/", dashboardRoutes);
 
 // 404 simples
 app.use((req, res) => {

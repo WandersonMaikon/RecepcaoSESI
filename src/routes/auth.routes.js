@@ -17,7 +17,7 @@ router.post("/login", (req, res) => {
     if (usuario === USUARIO_OK && senha === SENHA_OK) {
         // Sem session por enquanto: redireciona direto
         // (Se você quiser manter “logado”, eu coloco express-session)
-        return res.redirect("/visitantes");
+        return res.redirect("/dashboard");
     }
 
     return res.status(401).render("auth/login", {
